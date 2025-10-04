@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Send } from "lucide-react";
+import { AddUserDialog } from "./AddUser";
+
 
 type User = {
   id: string;
@@ -33,6 +35,10 @@ const Dashboard = () => {
     { id: "1", name: "Marc", email: "marc@gmail.com", role: "Manager", manager: "-" },
     { id: "2", name: "Sarah", email: "sarah@company.com", role: "Employee", manager: "Marc" },
   ]);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const handleOpenDialog = () => {
+    setIsDialogOpen(true);
+  };
 
   const handleRoleChange = (userId: string, newRole: string) => {
     setUsers(users.map(user => user.id === userId ? { ...user, role: newRole } : user));
@@ -57,10 +63,14 @@ const Dashboard = () => {
                 <CardTitle>Team Members</CardTitle>
                 <CardDescription>View and manage user roles and assignments</CardDescription>
               </div>
-              <Button className="bg-accent hover:bg-accent/90">
+              <Button className="bg-accent hover:bg-accent/90"
+               onClick={() => setIsDialogOpen(true)} >
+              
                 <Plus className="mr-2 h-4 w-4" />
                 New User
               </Button>
+              <AddUserDialog  open={isDialogOpen} 
+        onOpenChange={setIsDialogOpen}  />
             </div>
           </CardHeader>
           <CardContent>

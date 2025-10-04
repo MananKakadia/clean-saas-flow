@@ -33,7 +33,7 @@ const SignIn = () => {
               </Link>
             </div>
 
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+            <Button type="submit" className="w-full bg-accent hover:bg-accent/900">
               Sign In
             </Button>
 
