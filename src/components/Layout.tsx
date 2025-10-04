@@ -30,6 +30,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <Link to="/approval-rules" className="text-foreground hover:text-primary transition-colors">
                 Approval Rules
               </Link>
+              <Link to="/employee-expenses" className="text-foreground hover:text-primary transition-colors">
+                My Expenses
+              </Link>
               <Link to="/signin">
                 <Button variant="outline" size="sm">
                   Sign In
@@ -67,6 +70,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Approval Rules
+              </Link>
+              <Link
+                to="/employee-expenses"
+                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                My Expenses
               </Link>
               <Link to="/signin" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="outline" size="sm" className="w-full">

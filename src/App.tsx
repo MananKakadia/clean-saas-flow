@@ -8,6 +8,8 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Dashboard from "./pages/Dashboard";
 import ApprovalRules from "./pages/ApprovalRules";
+import EmployeeExpenses from "./pages/EmployeeExpenses";
+import SubmitExpense from "./pages/SubmitExpense";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/signin" element={<SignIn />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/approval-rules" element={<ApprovalRules />} />
+          <Route path="/employee-expenses" element={<EmployeeExpenses />} />
+          <Route path="/submit-expense" element={<SubmitExpense />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
